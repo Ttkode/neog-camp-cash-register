@@ -21,6 +21,9 @@ nextButton.addEventListener("click", () => {
             nextButton.style.display = "none";
             divReturned.style.display = "block";
         }
+        else{
+            showMessage("Amount given should be greater than zero");
+        }
     }
 });
 
@@ -33,12 +36,12 @@ if(isNaN(cashGiven.value)==true){
 } 
 else {
     if( cashGiven.value > 0){
-        if(cashGiven.value >= billAmount.value){
+        if(Number(cashGiven.value) >= Number(billAmount.value)){
             var amountToBeReturned = cashGiven.value - billAmount.value;
             calculateChange(amountToBeReturned);
         } 
         else {
-            showMessage("You are losing the job");
+            showMessage("Lose the job?");
         }
     } 
     else {
@@ -47,11 +50,12 @@ else {
     }
 })
 
-function calculateChange(amountToBeReturned){ returnedChange.style.display = "block";
-    for(var i=0; i < notes.length; i++){
-        var numberOfNotes = Math.trunc(amountToBeReturned / notes[i]);
-        noOfNotes[i].innerText= numberOfNotes;
+function calculateChange(amountToBeReturned){
+    returnedChange.style.display = "block";
+    for(let i=0; i < notes.length; i++){
+        const numberOfNotes = Math.trunc(amountToBeReturned / notes[i]);
         amountToBeReturned = amountToBeReturned % notes[i];
+        noOfNotes[i].innerText = numberOfNotes;
     }
 }
 

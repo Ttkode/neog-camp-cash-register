@@ -6,47 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cash Register Manager</title>
     <link href="/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Cash Register Manager</h1>
         <p>Enter the bill amount and cash given by the customer and know the minimun number of notes of return</p>
 
-        <label for="bill-amount">Bill Amount:</label>
-        <input id="bill-amount" type="text"></input>
+        <div>
+            <label for="bill-amount">Bill Amount:</label>
+            <input id="bill-amount" type="number" min="0"></input> <br> <br>
+            <button id="next-button">Next</button>
+        </div>
 
-        <label for="cash-given">Cash Given:</label>
-        <input id="cash-given" type="text"></input>
-
-        <button id="check-button">Check</button>
+        <div id="div-cash-given">
+            <label for="cash-given">Cash Given:</label>
+            <input id="cash-given" type="number" min="0"></input>
+            <button id="check-button">Check</button>
+        </div>
 
         <p id="message-display"></p>
 
-        <table>
-            <caption>Return Change</caption>
-            <tr>
-                <th>No. of Notes</th>
-                <td class="no-of-notes"></td>
-                <td class="no-of-notes"></td>
-                <td class="no-of-notes"></td>
-                <td class="no-of-notes"></td>
-                <td class="no-of-notes"></td>
-                <td class="no-of-notes"></td>
-                <td class="no-of-notes"></td>
-            </tr>
+        <div id="returned-change">
+            <table>
+                <caption>Return Change</caption>
+                <tr>
+                    <th>No. of Notes</th>
+                    <td class="no-of-notes"></td>
+                    <td class="no-of-notes"></td>
+                    <td class="no-of-notes"></td>
+                    <td class="no-of-notes"></td>
+                    <td class="no-of-notes"></td>
+                    <td class="no-of-notes"></td>
+                    <td class="no-of-notes"></td>
+                </tr>
 
-            <tr>
-                <th>Notes</th>
-                <td>2000</td>
-                <td>500</td>
-                <td>100</td>
-                <td>20</td>
-                <td>10</td>
-                <td>5</td>
-                <td>1</td>
-            </tr>
-        </table>
+                <tr>
+                    <th>Notes</th>
+                    <td>2000</td>
+                    <td>500</td>
+                    <td>100</td>
+                    <td>20</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </div>
     </div>
+
+   
+
 </body>
 <script src="/app.js"></script>
 </html>
