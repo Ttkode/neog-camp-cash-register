@@ -1,4 +1,4 @@
-<h1> Neog Camp - Mark Project - CASH REGISTER
+<h1> Neog Camp - Mark Project - CASH REGISTER </H1>
 
 A web app which tell the minimum number of notes to be returned as change
 
